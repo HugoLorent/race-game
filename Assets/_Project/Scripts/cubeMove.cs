@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class cubeMove : MonoBehaviour
 {
+
+  [SerializeField]
+  int speed;
   // Start is called before the first frame update
   void Start()
   {
@@ -13,24 +16,27 @@ public class cubeMove : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+
+    var kart = GetComponent<Rigidbody>();
+
     if (Input.GetKey(KeyCode.UpArrow))
     {
-      GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.up * 0.2f);
+      transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
     if (Input.GetKey(KeyCode.DownArrow))
     {
-      GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.down * 0.2f);
+      transform.Translate(Vector3.back * Time.deltaTime * speed);
     }
 
     if (Input.GetKey(KeyCode.LeftArrow))
     {
-      GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.left * 0.2f);
+      transform.Translate(Vector3.left * Time.deltaTime * speed);
     }
 
     if (Input.GetKey(KeyCode.RightArrow))
     {
-      GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.right * 0.2f);
+      transform.Translate(Vector3.right * Time.deltaTime * speed);
     }
   }
 }
