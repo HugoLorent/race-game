@@ -18,17 +18,17 @@ public class cubeMove : MonoBehaviour
       GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.up * 0.2f);
     }
 
-    if (Input.Getkey(KeyCode.DownArrow))
+    if (Input.GetKey(KeyCode.DownArrow))
     {
       GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.down * 0.2f);
     }
 
-    if (Input.Getkey(KeyCode.LeftArrow))
+    if (Input.GetKey(KeyCode.LeftArrow))
     {
       GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.left * 0.2f);
     }
 
-    if (Input.Getkey(KeyCode.RightArrow))
+    if (Input.GetKey(KeyCode.RightArrow))
     {
       GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.right * 0.2f);
     }
